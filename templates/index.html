@@ -1,0 +1,56 @@
+{% load staticfiles %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- <link rel="icon" href="../../favicon.ico"> -->
+    <title>Signin Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <!-- <link href="../../dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <!-- <link href="signin.css" rel="stylesheet"> -->
+    <link href="/static/css/index.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <div class="form-signin">
+        <h2 class="form-signin-heading">Calculadora de Moedas</h2>
+        <label for="moeda" class="sr-only">Moeda</label>
+        <select id="moeda" class="form-control" required autofocus>
+          {% for mv in moedas_virtuais %}
+            <option value="{{mv.nome_moeda}}">{{mv.nome_moeda}}</option>
+          {% endfor %}
+        </select>
+        <label for="investimento" class="sr-only">Investimento</label>
+        <input type="text" id="investimento" class="form-control" placeholder="Valor" required>
+        <div class="checkbox">
+          <label id="resultado">           
+          </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" id="btn_enviar">Enviar</button>
+      </div>
+
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+
+    <script src="/static/js/jquery-3.2.1.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/index.js"></script>
+  </body>
+</html>
